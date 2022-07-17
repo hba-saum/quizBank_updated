@@ -1,0 +1,54 @@
+html{
+	scroll-behavior: smooth;
+}
+.paper{
+	background: #FFF;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.paper-top{
+	background: #FFF;
+	border: 1px solid #FFF;
+	border-radius: 3px 3px 0 0;
+	
+}
+.paper-middle{
+	background: #FFF;
+}
+.paper-bottom{
+	background: #FFF;
+	border: 1px solid #FFF;
+	border-radius: 0 0 3px 3px;
+	
+}
+.jumbotron{
+	border-radius: 0px;
+}
+.txt-dark{
+	color: #E9F1F2;
+}
+.bgr-dark{
+	background: #2a6041;
+}
+.bgr-ldark{
+	background: #28965A;
+}
+.bgr-light{
+	background: #C2EFD6;
+}
+.bgr-red{
+	background: #E15554;
+}
+.btn-dark{
+	background: #E9F1F2;
+	border-color: #283D59;
+	color: #0E1826;
+}
+.card{
+	border: 4px solid #28965A;
+}
+.card-img{
+	height: 200px;
+	width: auto;
+}

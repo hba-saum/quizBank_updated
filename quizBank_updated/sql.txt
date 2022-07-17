@@ -1,0 +1,87 @@
+CREATE TABLE solver(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	username VARCHAR(30) NOT NULL,
+	dob VARCHAR(30) NOT NULL,
+	gender VARCHAR(7) NOT NULL,
+	institute VARCHAR(50) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	mobno INT(30) NOT NULL,
+	pass VARCHAR(30) NOT NULL,
+	imgdir VARCHAR(30)
+)
+
+CREATE TABLE setter(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	username VARCHAR(30) NOT NULL,
+	dob VARCHAR(30) NOT NULL,
+	gender VARCHAR(7) NOT NULL,
+	type VARCHAR(7) NOT NULL,
+	institute VARCHAR(50),
+	address VARCHAR(50) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	mobno INT(30) NOT NULL,
+	pass VARCHAR(30) NOT NULL,
+	imgdir VARCHAR(30)
+)
+___________________________________________________________________________________________________
+table questionPaper
+id
+Title
+qName --> tags
+questionSetterId
+
+--------------------
+table question
+id
+question
+questionPaperId
+opt1
+opt2
+opt3
+opt4
+--imgdir
+
+
+CREATE TABLE question_paper(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(60) NOT NULL,
+	tags VARCHAR(90) NOT NULL,
+	question_setter_id INT(6) REFERENCES setter(id)
+);
+
+CREATE TABLE question(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	question VARCHAR(150) NOT NULL,
+	question_paper_id INT(6) REFERENCES question_paper(id),
+	opt1 VARCHAR(60) NOT NULL,
+	opt2 VARCHAR(60) NOT NULL,
+	opt3 VARCHAR(60) NOT NULL,
+	opt4 VARCHAR(60) NOT NULL,
+	corrent_answer int(2) NOT NULL
+);
+
+
+_______________________________________________________________________________________
+
+CREATE TABLE answer_sheet(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	question_paper_id INT(6) REFERENCES question_paper(id),
+	priblem_solver_id INT(6) REFERENCES setter(id),
+	mark INT(5) 
+)
+
+CREATE TABLE answer(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	given_ans int(2) NOT NULL,
+	question_id INT(6) REFERENCES question(id),
+	answer_sheet_id INT(6) REFERENCES answer_sheet(id)
+)
+
+
+
+
